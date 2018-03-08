@@ -1,4 +1,21 @@
 # Persona API
+
+Setup:
+
+```cd``` to server directory
+
+```npm install``` 
+
+```npm start```
+
+Run:
+
+Head to the following urls in a browser/Postman/Insomnia
+
+```http://localhost:8081/search{username}```  
+```http://localhost:8081/people```  
+
+
 The Persona API is a fake RESTful API that delivers made up data on a few endpoints. The data sits within a zip file and needs to be decompressed only on deployment not when it sits in this repository. So you have to find a way to do that in an elegant manner.
 
 ## Must Haves
