@@ -16,9 +16,10 @@ app.use(cors());
 app.use('/', routes);
 app.set('port', process.env.PORT);
 
-const sequelize = new Sequelize('database', 'root', 'password', {
+const sequelize = new Sequelize('personaDatabase', 'root', 'password', {
   host: 'localhost',
-  dialect: 'sqlite',
+  port: '5432',
+  dialect: 'postgres',
   operatorsAliases: false,
   pool: {
     max: 5,
@@ -26,7 +27,9 @@ const sequelize = new Sequelize('database', 'root', 'password', {
     acquire: 30000,
     idle: 10000,
   },
-  storage: './database.sqlite',
+  define: {
+    underscored: true,
+  },
 });
 
 sequelize
