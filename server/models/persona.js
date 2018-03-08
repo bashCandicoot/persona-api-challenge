@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Persona = sequelize.define('persona', {
+  const Persona = sequelize.define('Personas', {
     id: {
       allowNull: false,
       primaryKey: true,
@@ -46,10 +46,10 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     },
-    current_location: {
-      type: DataTypes.GEOMETRY('POINT'),
-      allowNull: false,
-    },
+    // current_location: {
+    //   type: DataTypes.GEOMETRY('POINT'),
+    //   allowNull: false,
+    // },
     blood_group: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -113,6 +113,7 @@ module.exports = (sequelize, DataTypes) => {
     mail: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
       validate: {
         len: {
           args: [0, 50],
@@ -130,7 +131,9 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     },
-  }, {});
+  }, {
+    underscored: true,
+  });
   // Persona.associate = (models) => {
   //   console.log(models);
   //   // associations can be defined here
