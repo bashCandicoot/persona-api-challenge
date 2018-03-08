@@ -8,8 +8,8 @@
     "lint": "./node_modules/.bin/eslint **/*.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Steve Green",
+  "license": "GPLv3",
   "dependencies": {
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
