@@ -4,7 +4,7 @@ const Sequelize = require('sequelize');
 const op = Sequelize.Op;
 
 module.exports = (req, res) => {
-  db.sequelize.models.persona.findAll({
+  db.sequelize.models.Personas.findAll({
     where: {
       username: {
         [op.like]: `%${req.params.username}%`,
