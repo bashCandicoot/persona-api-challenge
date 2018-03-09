@@ -6,7 +6,12 @@ Setup:
 
 ```npm install``` 
 
+```npm run unzip```
+
 ```npm start```
+
+```sequelize db:migrate```
+
 
 Run:
 
