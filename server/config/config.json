@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "personaDatabase",
+    "database": "persona_database",
     "host": "localhost",
     "dialect": "postgres"
   }
