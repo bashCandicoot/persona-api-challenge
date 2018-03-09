@@ -4,13 +4,13 @@ Setup:
 
 ```cd``` to server directory
 
+```npm install -g sequelize-cli``` 
+
 ```npm install``` 
 
-```npm run unzip```
+```npm run setup```
 
 ```npm start```
-
-```sequelize db:migrate```
 
 
 Run:
