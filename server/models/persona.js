@@ -4,11 +4,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
-      // allowNull: false,
+      allowNull: false,
     },
     job: {
       type: DataTypes.STRING,
-      // allowNull: false,
+      allowNull: false,
       // validate: {
       //   len: {
       //     args: [0, 100],
@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     company: {
       type: DataTypes.STRING,
-      // allowNull: false,
+      allowNull: false,
       // validate: {
       //   len: {
       //     args: [0, 100],
@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     residence: {
       type: DataTypes.STRING,
-      // allowNull: false,
+      allowNull: false,
       // validate: {
       //   len: {
       //     args: [0, 100],
@@ -48,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     current_location: {
       type: DataTypes.ARRAY(DataTypes.DOUBLE),
-      // allowNull: false,
+      allowNull: false,
     },
     blood_group: {
       type: DataTypes.STRING,
@@ -62,7 +62,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     website: {
       type: DataTypes.ARRAY(DataTypes.STRING),
-      // allowNull: false,
+      allowNull: false,
       // validate: {
       //   len: {
       //     args: [0, 5],
@@ -72,7 +72,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     username: {
       type: DataTypes.STRING,
-      // allowNull: false,
+      allowNull: false,
       // validate: {
       //   len: {
       //     args: [0, 50],
@@ -82,7 +82,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     name: {
       type: DataTypes.STRING,
-      // allowNull: false,
+      allowNull: false,
       // validate: {
       //   len: {
       //     args: [0, 50],
@@ -92,7 +92,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     sex: {
       type: DataTypes.STRING,
-      // allowNull: false,
+      allowNull: false,
       // validate: {
       //   len: {
       //     args: [1, 1],
@@ -102,7 +102,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     address: {
       type: DataTypes.STRING,
-      // allowNull: false,
+      allowNull: false,
       // validate: {
       //   len: {
       //     args: [0, 100],
@@ -112,7 +112,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     mail: {
       type: DataTypes.STRING,
-      // allowNull: false,
+      allowNull: false,
       // unique: true,
       // validate: {
       //   len: {
@@ -123,7 +123,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     birthdate: {
       type: DataTypes.STRING,
-      // allowNull: false,
+      allowNull: false,
       // validate: {
       //   len: {
       //     args: [10, 10],
@@ -134,22 +134,15 @@ module.exports = (sequelize, DataTypes) => {
     created_at: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
-      // allowNull: false,
+      allowNull: false,
     },
     updated_at: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
-      // allowNull: false,
+      allowNull: false,
     },
   }, {
     underscored: true,
-    // hooks: {
-    //   beforeCreate: ((persona) => {
-    //     console.log('MMMMMM');
-    //     persona.created_at = new Date();
-    //     persona.updated_at = new Date();
-    //   }),
-    // },
   });
   return Persona;
 };
