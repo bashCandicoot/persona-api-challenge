@@ -6,7 +6,7 @@
   "scripts": {
     "start": "./node_modules/nodemon/bin/nodemon.js src/app.js --exec 'npm run lint && node'",
     "lint": "./node_modules/.bin/eslint **/*.js",
-    "unzip": "unzip ./fake_profiles.zip"
+    "setup": "unzip ./fake_profiles.zip && sequelize db:create personaDatabase && sequelize db:migrate"
   },
   "keywords": [],
   "author": "Steve Green",
