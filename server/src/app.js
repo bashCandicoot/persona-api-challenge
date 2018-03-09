@@ -6,6 +6,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const Sequelize = require('sequelize');
 const routes = require('../routes');
+const env = require('../.env');
 
 const app = express();
 
@@ -14,23 +15,19 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use('/', routes);
-app.set('port', process.env.PORT);
 
-const sequelize = new Sequelize('personaDatabase', 'root', 'password', {
-  host: 'localhost',
-  port: '5432',
-  dialect: 'postgres',
-  operatorsAliases: false,
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000,
+const sequelize = new Sequelize(
+  env.DATABASE_NAME,
+  env.DATABASE_USERNAME,
+  env.DATABASE_PASSWORD, {
+    host: env.DATABASE_HOST,
+    port: env.DATABASE_PORT,
+    dialect: env.DATABASE_DIALECT,
+    define: {
+      underscored: true,
+    },
   },
-  define: {
-    underscored: true,
-  },
-});
+);
 
 sequelize
   .authenticate()
@@ -39,4 +36,4 @@ sequelize
 
 sequelize
   .sync()
-  .then(() => app.listen(app.get('port')));
+  .then(() => app.listen(env.PORT));
