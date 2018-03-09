@@ -1,5 +1,7 @@
 # Persona API
 
+Node.js/Sequelize/Postgres/Vue.js
+
 Setup:
 
 ```cd``` to server directory
