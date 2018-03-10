@@ -2,12 +2,12 @@
   "name": "persona-api-challenge",
   "version": "0.0.1",
   "description": "Persona API challenge",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
     "start": "export NODE_ENV=development && ./node_modules/nodemon/bin/nodemon.js src/app.js --exec 'npm run lint && node'",
     "lint": "./node_modules/.bin/eslint **/*.js",
-    "setup": "unzip ./fake_profiles.zip && sequelize db:create personaDatabase && sequelize db:migrate",
-    "test": "export NODE_ENV=test && mocha"
+    "setup": "unzip ./fake_profiles.zip && sequelize db:create persona_database && sequelize db:migrate",
+    "test": "export NODE_ENV=test && mocha && sequelize db:create persona_database_test && sequelize db:migrate"
   },
   "keywords": [],
   "author": "Steve Green",
