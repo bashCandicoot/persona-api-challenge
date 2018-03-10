@@ -19,8 +19,9 @@ Run:
 
 Head to the following urls in a browser/Postman/Insomnia
 
-```http://localhost:8081/search{username}```  
-```http://localhost:8081/people```  
+```GET http://localhost:8081/search{username}```  
+```GET http://localhost:8081/people```  
+```DELETE http://localhost:8081/people/{username}```  
 
 
 ## Must Haves
