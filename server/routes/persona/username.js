@@ -5,25 +5,21 @@ const op = Sequelize.Op;
 
 module.exports = {
   async get(req, res) {
-    await db.sequelize.models.Personas.findAll({
+    const persona = await db.sequelize.models.Personas.findAll({
       where: {
         username: {
           [op.like]: `%${req.params.username}%`,
         },
       },
-    })
-      .then(persona => res.status(200).json({
-        persona,
-      }));
+    });
+    res.send(persona);
   },
   async delete(req, res) {
     await db.sequelize.models.Personas.destroy({
       where: {
         username: req.params.username,
       },
-    })
-      .then(persona => res.status(200).json({
-        persona,
-      }));
+    });
+    res.send(`Deleted ${req.params.username}`);
   },
 };

@@ -1,6 +1,8 @@
 const db = require('../../models/index');
 
-module.exports = (req, res) => {
-  db.sequelize.models.Personas.findAll()
-    .then(persona => res.status(200).json({ persona }));
+module.exports = {
+  async get(req, res) {
+    const personas = await db.sequelize.models.Personas.findAll();
+    res.send(personas);
+  },
 };
