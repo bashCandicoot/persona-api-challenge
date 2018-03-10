@@ -4,13 +4,15 @@
     "password": null,
     "database": "persona_database",
     "host": "localhost",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "operatorsAliases": false
   },
   "test": {
     "username": "root",
     "password": null,
     "database": "persona_database_test",
     "host": "localhost",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "operatorsAliases": false
   }
 }
