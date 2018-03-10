@@ -6,7 +6,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const Sequelize = require('sequelize');
 const routes = require('../routes');
-const env = require('../.env');
+const env = require('../.env')[process.env.NODE_ENV];
 
 const app = express();
 
