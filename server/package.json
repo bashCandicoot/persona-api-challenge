@@ -6,10 +6,10 @@
   "scripts": {
     "start": "export NODE_ENV=development && ./node_modules/nodemon/bin/nodemon.js src/app.js --exec 'npm run lint && node'",
     "lint": "./node_modules/.bin/eslint **/*.js",
-    "setup": "unzip ./fake_profiles.zip && create_db",
-    "create_db": "sequelize db:create persona_database && sequelize db:migrate",
+    "setup": "unzip ./fake_profiles.zip && npm run create_db",
+    "create_db": "export NODE_ENV=development && sequelize db:create persona_database && sequelize db:migrate && sequelize db:seed:all",
     "setup_test": "cp test/fake_profiles.json fake_profiles.json && npm run create_test_db",
-    "create_test_db": "sequelize db:create persona_database_test && sequelize db:migrate",
+    "create_test_db": "export NODE_ENV=test && sequelize db:create persona_database_test && sequelize db:migrate && sequelize db:seed:all",
     "test": "export NODE_ENV=test && mocha"
   },
   "keywords": [],
