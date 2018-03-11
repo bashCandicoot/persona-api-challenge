@@ -23,8 +23,9 @@ Head to the following urls in a browser/Postman/Insomnia
 ```GET    http://localhost:8081/people```  
 ```DELETE http://localhost:8081/people/{username}```  
 
-Run tests:
+Test:
 
+```npm run setup_test```  
 ```npm test```  
 
 ## Must Haves
