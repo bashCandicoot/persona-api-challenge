@@ -6,14 +6,19 @@
   "scripts": {
     "start": "export NODE_ENV=development && ./node_modules/nodemon/bin/nodemon.js src/app.js --exec 'npm run lint && node'",
     "lint": "./node_modules/.bin/eslint **/*.js",
-    "setup": "unzip ./fake_profiles.zip && sequelize db:create persona_database && sequelize db:migrate",
-    "test": "export NODE_ENV=test && mocha && sequelize db:create persona_database_test && sequelize db:migrate"
+    "setup": "unzip ./fake_profiles.zip && create_db",
+    "create_db": "sequelize db:create persona_database && sequelize db:migrate",
+    "setup_test": "cp test/fake_profiles.json fake_profiles.json && npm run create_test_db",
+    "create_test_db": "sequelize db:create persona_database_test && sequelize db:migrate",
+    "test": "export NODE_ENV=test && mocha"
   },
   "keywords": [],
   "author": "Steve Green",
   "license": "GPLv3",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
     "cors": "^2.8.4",
     "dotenv": "^5.0.0",
     "eslint": "^4.17.0",
