@@ -16,25 +16,29 @@ app.use(cors());
 
 app.use('/', routes);
 
-const sequelize = new Sequelize(
-  env.DATABASE_NAME,
-  env.DATABASE_USERNAME,
-  env.DATABASE_PASSWORD,
-  {
-    host: env.DATABASE_HOST,
-    port: env.DATABASE_PORT,
-    dialect: env.DATABASE_DIALECT,
-    define: {
-      underscored: true,
+if (env.NODE_ENV !== 'test') {
+  const sequelize = new Sequelize(
+    env.DATABASE_NAME,
+    env.DATABASE_USERNAME,
+    env.DATABASE_PASSWORD,
+    {
+      host: env.DATABASE_HOST,
+      port: env.DATABASE_PORT,
+      dialect: env.DATABASE_DIALECT,
+      define: {
+        underscored: true,
+      },
     },
-  },
-);
+  );
 
-sequelize
-  .authenticate()
-  .then(() => console.log('Connected!'))
-  .catch(err => console.error('Unable to connect :(', err));
+  sequelize
+    .authenticate()
+    .then(() => console.log('Connected!'))
+    .catch(err => console.error('Unable to connect :(', err));
 
-sequelize
-  .sync()
-  .then(() => app.listen(env.PORT));
+  sequelize
+    .sync()
+    .then(() => app.listen(env.PORT));
+}
+
+module.exports = app;
