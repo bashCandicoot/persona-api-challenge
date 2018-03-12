@@ -10,7 +10,8 @@ Setup:
 
 ```npm install``` 
 
-```npm run setup``` will create a db called ```persona_database```
+```npm run setup``` will create a db called ```persona_database```  
+
 ```npm run setup_test``` will create a db called ```persona_database_test```  
 
 Both db's can be accessed via the postgres user ```username`` with no password  
