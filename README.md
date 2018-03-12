@@ -10,12 +10,13 @@ Setup:
 
 ```npm install``` 
 
-```npm run setup``` will create a db called ```persona_database```  
+```npm run setup``` will create a db called ```persona_database``` and populate it    
 
-```npm run setup_test``` will create a db called ```persona_database_test```  
+```npm run setup_test``` will create a db called ```persona_database_test``` and populate it      
 
-Both db's can be accessed via the postgres user ```username`` with no password  
-This user can be changed to your own postgres user by editing ```server/config/config.json```
+The databases can be accessed via the postgres user ```username``` with no password  
+
+To change this user edit ```server/config/config.json```  
 
 ```npm run setup```
 
