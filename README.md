@@ -1,6 +1,12 @@
 # Persona API
 
-Node.js/Sequelize/Postgres/Vue.js
+Requires Postgres and Node.js  
+
+```npm run setup``` will create a db called ```persona_database```
+```npm run setup_test``` will create a db called ```persona_database_test```  
+
+Both db's can be accessed via the postgres user ```username`` with no password  
+This user can be changed to your own postgres user by editing ```server/config/config.json```
 
 Setup:
 
