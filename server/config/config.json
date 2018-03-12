@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "root",
+    "username": "username",
     "password": null,
     "database": "persona_database",
     "host": "localhost",
@@ -8,7 +8,7 @@
     "operatorsAliases": false
   },
   "test": {
-    "username": "root",
+    "username": "username",
     "password": null,
     "database": "persona_database_test",
     "host": "localhost",
