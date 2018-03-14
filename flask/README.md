@@ -5,6 +5,10 @@ Requires Flask and Python 3
 Setup:
 
 ```cd server```
+
+Create a virtualenv
+
+```pip install -r requirements.txt```
 ```unzip fake_profiles.zip```
 ```source .env```
 ```createdb persona_database```
