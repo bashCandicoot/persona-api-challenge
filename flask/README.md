@@ -4,16 +4,15 @@ Requires Flask and Python 3
 
 Setup:
 
-```cd server```
+Load into a ```virtualenv``` environment  
 
-Create a virtualenv
-
-```pip install -r requirements.txt```
-```unzip fake_profiles.zip```
-```source .env```
-```createdb persona_database```
-```createdb persona_database_test```
-```python manage.py db upgrade```
+```cd server```  
+```pip install -r requirements.txt```  
+```unzip fake_profiles.zip```  
+```source .env```  
+```createdb persona_database```  
+```createdb persona_database_test```  
+```python manage.py db upgrade```  
 
 Run:
 
