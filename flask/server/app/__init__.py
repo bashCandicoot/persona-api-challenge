@@ -1,5 +1,5 @@
 
-from flask import abort, jsonify, request
+from flask import abort, jsonify, redirect, request
 from flask_api import FlaskAPI
 from flask_sqlalchemy import SQLAlchemy
 from instance.config import app_config
@@ -15,9 +15,10 @@ def create_app(config_name):
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
 
-    @app.route('/people/', methods=['GET'])
-    def people():
-        people = Persona.get_all()
+    @app.route('/people/', defaults={'page': 1}, methods=['GET'])
+    @app.route("/people/<int:page>/", methods=["GET"])
+    def people(page):
+        people = Persona.query.paginate(page, 10).items
         results = []
         for person in people:
             obj = {
@@ -39,6 +40,7 @@ def create_app(config_name):
                 'date_modified': person.date_modified
             }
             results.append(obj)
+
         response = jsonify(results)
         response.status_code = 200
         return response
