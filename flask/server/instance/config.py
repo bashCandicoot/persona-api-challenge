@@ -17,7 +17,7 @@ class DevelopmentConfig(Config):
 class TestingConfig(Config):
     """Configurations for Testing, with a separate test database."""
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = 'persona_database.sqlite'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/persona_database_test'
     DEBUG = True
 
 app_config = {
