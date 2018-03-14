@@ -13,6 +13,7 @@ Load into a ```virtualenv``` environment
 ```createdb persona_database```  
 ```createdb persona_database_test```  
 ```python manage.py db upgrade```  
+```flask run```  
 
 Run:
 
