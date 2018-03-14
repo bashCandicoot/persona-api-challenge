@@ -20,4 +20,5 @@ Run:
 Head to the following url in a browser/Postman/Insomnia
 
 ```GET    http://localhost:8081/people```  
+```GET    http://localhost:8081/people/{page}```  
 
