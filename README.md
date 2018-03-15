@@ -1,6 +1,6 @@
 # Persona API  
 
-I've implemented two solutions, one using Node and one in Flask
+I've implemented two solutions, one using Node and one using Flask
 
 ## Must Haves
 
