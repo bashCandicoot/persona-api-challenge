@@ -1,5 +1,7 @@
 # Persona API  
 
+I've implemented two solutions, one using Node and one in Flask
+
 ## Must Haves
 
 The Persona API is a fake RESTful API that delivers made up data on a few endpoints. The data sits within a zip file and needs to be decompressed only on deployment not when it sits in this repository. So you have to find a way to do that in an elegant manner.
